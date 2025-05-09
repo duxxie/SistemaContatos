@@ -22,7 +22,6 @@ public class InputHelper {
 
     public String scanString(Object object) {
         System.out.print(object);
-        scanner.nextLine();
-        return scanner.nextLine();
+        return scanner.next();
     }
 }

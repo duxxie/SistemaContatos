@@ -14,13 +14,13 @@ public class Contatos {
     }
 
     public void write() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(this.nome));
-        writer.write(nome + "\n" + telefone + "\n" + email);
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/adicionados/" + this.nome));
+        writer.write(this.nome + "\n" + telefone + "\n" + email);
         writer.close();
     }
 
-    public void read() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(this.nome));
+    public static void read(String nome) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("src/adicionados/" + nome));
         String line;
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
