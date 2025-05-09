@@ -1,5 +1,9 @@
+import model.Agenda;
+import model.Contatos;
+import service.InputHelper;
+import service.OutputHelper;
+
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
