@@ -1,10 +1,8 @@
 import model.Agenda;
-import model.Contatos;
+import model.Contato;
 import service.InputHelper;
 import service.OutputHelper;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
@@ -28,16 +26,17 @@ public class Main {
                     nome = input.scanString("Insira o Nome:");
                     telefone = input.scanString("Insira o Telefone:");
                     email = input.scanString("Insira o email:");
-                    Contatos novoContato = new Contatos(nome, telefone, email);
+                    Contato novoContato = new Contato(nome, telefone, email);
                     novoContato.write();
                     break;
                 case 2:
-
+                    agenda.carregarContatosDePasta("src/adicionados/");
+                    agenda.listarContatos();
                     break;
                 case 3:
                     OutputHelper.print("Ler Contato:");
                     nome = input.scanString("Insira o Nome:");
-                    Contatos.read(nome);
+                    Agenda.read(nome);
                     break;
                 case 0:
                     System.out.println("Encerrando...");

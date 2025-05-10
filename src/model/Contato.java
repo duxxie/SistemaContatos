@@ -2,29 +2,21 @@ package model;
 
 import java.io.*;
 
-public class Contatos {
+public class Contato {
     private String nome;
     private String telefone;
     private String email;
 
-    public Contatos(String nome, String telefone, String email) {
+    public Contato(String nome, String telefone, String email) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
     }
 
     public void write() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/adicionados/" + this.nome));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/adicionados/" + this.nome + ".txt"));
         writer.write(this.nome + "\n" + telefone + "\n" + email);
         writer.close();
-    }
-
-    public static void read(String nome) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/adicionados/" + nome));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
-        }
     }
 
     public String getNome() {
